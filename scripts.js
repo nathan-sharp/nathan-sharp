@@ -7,12 +7,12 @@ function createTopNav() {
 
   const logo = document.createElement('a');
   logo.className = 'nav-logo';
-  logo.href = '/';
+  logo.href = 'https://bata.njsharp.uk/';
   logo.textContent = 'NJSharp';
   topnav.appendChild(logo);
 
   const links = [
-      { href: '/about/', text: 'About' },
+      { href: 'https://bata.njsharp.uk/about/', text: 'About' },
       { href: 'https://apps.njsharp.uk/', text: 'Applications' },
       { href: 'https://publications.njsharp.uk/', text: 'Publications' }
   ];
