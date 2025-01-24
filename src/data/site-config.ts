@@ -38,9 +38,9 @@ export type SiteConfig = {
 };
 
 const siteConfig: SiteConfig = {
-    title: 'Dante',
-    subtitle: 'Minimal Astro.js theme',
-    description: 'Astro.js and Tailwind CSS theme for blog and portfolio by justgoodui.com',
+    title: 'Nathan Sharp',
+    subtitle: 'Engineering Student',
+    description: 'Portfolio and Projects.',
     image: {
         src: '/dante-preview.jpg',
         alt: 'Dante - Astro.js and Tailwind CSS theme'
@@ -77,27 +77,27 @@ const siteConfig: SiteConfig = {
             href: '/terms'
         },
         {
-            text: 'Download theme',
-            href: 'https://github.com/JustGoodUI/dante-astro-theme'
+            text: 'GitHub',
+            href: 'https://github.com/nathan-sharp/'
         }
     ],
     socialLinks: [
         {
-            text: 'Dribbble',
-            href: 'https://dribbble.com/'
+            text: 'Linkedin',
+            href: 'https://www.linkedin.com/in/nathan-sharp-owo/'
         },
         {
-            text: 'Instagram',
-            href: 'https://instagram.com/'
+            text: 'Facebook',
+            href: 'https://www.facebook.com/higglety.piggledy/'
         },
         {
-            text: 'X/Twitter',
-            href: 'https://twitter.com/'
+            text: 'Twitter',
+            href: 'https://twitter.com/wuffs_nathan/'
         }
     ],
     hero: {
-        title: 'Hi There & Welcome to My Corner of the Web!',
-        text: "I'm **Ethan Donovan**, a web developer at Amazing Studio, dedicated to the realms of collaboration and artificial intelligence. My approach involves embracing intuition, conducting just enough research, and leveraging aesthetics as a catalyst for exceptional products. I have a profound appreciation for top-notch software, visual design, and the principles of product-led growth. Feel free to explore some of my coding endeavors on <a href='https://github.com/JustGoodUI/dante-astro-theme'>GitHub</a> or follow me on <a href='https://twitter.com/justgoodui'>Twitter/X</a>.",
+        title: 'Hello & Welcome To The Show!',
+        text: "I'm **Nathan Sharp**, an Engineering Student at <a href='https://nescol.ac.uk/'>NesCol</a>, Feel free to explore some of my ambitious and ridiculous endeavors below.",
         image: {
             src: '/hero.jpeg',
             alt: 'A person sitting at a desk in front of a computer'
@@ -110,8 +110,8 @@ const siteConfig: SiteConfig = {
         ]
     },
     subscribe: {
-        title: 'Subscribe to Dante Newsletter',
-        text: 'One update per week. All the latest posts directly in your inbox.',
+        title: 'Subscribe to my Newsletter',
+        text: 'Get all my latest posts directly in your inbox.',
         formUrl: '#'
     },
     postsPerPage: 8,
