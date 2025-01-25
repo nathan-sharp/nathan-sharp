@@ -1,15 +1,15 @@
 ---
 title: Finzean Valley
-excerpt: A photograph of Tom's Cairn in winter
+excerpt: A photograph of Finzean Valley
 publishDate: '25 dec 2021'
 tags:
   - Photo
 seo: 
   image: 
     src: '/p-002.jpg'
-    alt: A person standing at the window
+    alt: A photograph of Finzean Valley
 ---
 
-![Finzean Valley](/p-002.png) 
+![A photograph of Finzean Valley](/p-002.png) 
 
-In a sea of white expanse a path remains, leading to a vast nothingness. 
+A photograph of a frosty <a href="https://en.wikipedia.org/wiki/Finzean">Finzean</a> Valley.

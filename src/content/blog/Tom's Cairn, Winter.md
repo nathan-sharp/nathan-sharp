@@ -7,9 +7,9 @@ tags:
 seo: 
   image: 
     src: '/p-001.jpg'
-    alt: A person standing at the window
+    alt: A photograph of Tom's Cairn in winter
 ---
 
-![Snow](/p-001.jpg) 
+![A photograph of Tom's Cairn in winter](/p-001.jpg) 
 
 In a sea of white expanse a path remains, leading to a vast nothingness. 

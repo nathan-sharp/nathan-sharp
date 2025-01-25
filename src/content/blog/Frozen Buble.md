@@ -1,15 +1,15 @@
 ---
 title: Frozen Bubble
-excerpt: A photograph of Tom's Cairn in winter
+excerpt: A photograph of frozen bubble
 publishDate: '01 feb 2021'
 tags:
   - Photo
 seo: 
   image: 
     src: '/p-003.jpg'
-    alt: A person standing at the window
+    alt: A photograph of frozen bubble
 ---
 
-![Finzean Valley](/p-003.jpg) 
+![A photograph of frozen bubble](/p-003.jpg) 
 
-In a sea of white expanse a path remains, leading to a vast nothingness. 
+A photograph of frozen bubble, on top of a car bonnet. 
