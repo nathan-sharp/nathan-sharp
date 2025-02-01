@@ -78,21 +78,21 @@ const siteConfig: SiteConfig = {
         },
         {
             text: 'GitHub',
-            href: 'https://github.com/nathan-sharp/'
+            href: 'https://li.njsharp.uk/github/'
         }
     ],
     socialLinks: [
         {
             text: 'Linkedin',
-            href: 'https://www.linkedin.com/in/nathan-sharp-owo/'
+            href: 'https://li.njsharp.uk/in/'
         },
         {
             text: 'Facebook',
-            href: 'https://www.facebook.com/higglety.piggledy/'
+            href: 'https://li.njsharp.uk/fb/'
         },
         {
             text: 'Twitter',
-            href: 'https://twitter.com/wuffs_nathan/'
+            href: 'https://li.njsharp.uk/twit/'
         }
     ],
     hero: {
