@@ -1,18 +1,3 @@
-body {
-    /* Background Dots */
-    --dot-bg: #232436;
-    --dot-color: #48495D;
-    --dot-size: 1px;
-    --dot-space: 22px;
-      background:
-          linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
-          linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
-          var(--dot-color);
-    
-    /* Text Color */
-    color: #BDBAC3;
-}
-
 /* r-cell {
-    background-color: #48495D;
+    background-color: #cfcfcf;
 } */
