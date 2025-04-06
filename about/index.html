@@ -26,6 +26,10 @@
       /* Text color */
       color: #48495d;
       }
+
+      hr {
+        background-color: #48495d;
+      }
     </style>
   </head>
   <body>
@@ -45,14 +49,27 @@
     <r-grid columns=8>
       <r-cell span=2-4>
         <h2>
-          My name is Nathan Sharp, I'm an engineering student at <a href="https://nescol.ac.uk/">Nescol</a> in Aberdeen and I am currently studying Mechanical Engineering. I have a keen interest in programming and web development, and I am always looking to learn new skills and improve my existing ones.
+          My name is Nathan Sharp, I'm an engineering student at <a href="https://nescol.ac.uk/" target="_blank">Nescol</a> in Aberdeen and I am currently studying Mechanical Engineering.
         </h2>
+        <h3>
+          I have a keen interest in programming and web development, and I am always looking to learn new skills and improve my existing ones.
+        </h3>
       </r-cell>
       <r-cell span=6-7>
         <img src="/pfp.jpeg">
-        <h2><a href="mailto:nathan@njsharp.uk">Email nathan@njsharp.uk</a></h2>
+        <h2><a href="mailto:contact@njsharp.uk" target="_blank">Email contact@njsharp.uk</a></h2>
+      </r-cell>
+      <r-cell span=2-4>
+        <hr>
+        <h2>This Site</h2>
+        <h3>This site layout and design was make using <a href="https://rsms.me/raster/" target="_blank">Raster</a>, then just simple HTML and CSS. The site files are stored on <a href="https://github.com/nathan-sharp/nathan-sharp/" target="_blank">GitHub</a> and globally hosted by Cloudflare.</h3>
+        <h3 id="copyright">2006</h3>
+        <script>
+          const d = new Date();
+          let year = d.getFullYear();
+          document.getElementById("copyright").innerHTML = "©"+year+" Nathan Sharp.";
+        </script>
       </r-cell>
     </r-grid>
-
   </body>
 </html>
