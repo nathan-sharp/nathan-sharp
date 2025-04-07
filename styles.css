@@ -9,3 +9,14 @@
 .Footer {
     padding-top: 10%;
 }
+
+.see-all {
+    color: #48495D;
+}
+
+.see-all:hover {
+    background-color: #BDBAC3;
+    color: #48495D;
+    border-radius: 5px;
+    padding: 5px;
+}
