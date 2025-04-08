@@ -10,6 +10,6 @@ How to add my 80:30 web button to your site
 
 <a href="https://njsharp.uk/" target="blank_"><img height="30" width="80" src="/button.png"></a>
 
-'''HTML
+```HTML
     <a href="https://njsharp.uk/" target="blank_"><img height="30" width="80" src="/button.png"></a>
-'''
+```
