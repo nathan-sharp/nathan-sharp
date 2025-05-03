@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Display Calibration</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/Raster-v20/raster2.css">
+    <style>
+      .fixed-size-table {
+        width: 10cm;
+        height: 10cm;
+        table-layout: fixed; /* Ensures cells respect the table's dimensions */
+      }
+
+      .fixed-size-line {
+        background-color: black;
+        color: white;
+        display: block; /* Ensure it behaves as a block element */
+        width: 10cm;
+        height: auto; /* Optional: Adjust height as needed */
+        text-align: center; /* Optional: Center text inside */
+        box-sizing: border-box; /* Include padding and borders in width */
+      }
+
+      .fixed-size-line p {
+        margin: 0; /* Remove default margins */
+        padding: 0; /* Remove default padding */
+      }
+
+    </style>
+  </head>
+  <body>
+    <r-grid columns=4>
+      <r-cell span=2-3>
+        <h1>Display Calibration</h1>
+        <p>A tool for testing your displays scaling calibration.</p>
+        <hr>
+      </r-cell>
+      <r-cell span=2-3>Sample text for NJS projects and articles.</r-cell>
+      <r-cell span=2-3>
+        <!-- 10cm line -->
+        <div class="fixed-size-line">
+          <p>Line</p>
+        </div>
+        <!-- 10x10cm grid -->
+        <table class="fixed-size-table">
+          <tr>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+            <th>7</th>
+            <th>8</th>
+            <th>9</th>
+            <th>10</th>
+          </tr>
+          <tr>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>5</td>
+          </tr>
+          <tr>
+            <td>6</td>
+          </tr>
+          <tr>
+            <td>7</td>
+          </tr>
+          <tr>
+            <td>8</td>
+          </tr>
+          <tr>
+            <td>9</td>
+          </tr>
+          <tr>
+            <td>10</td>
+          </tr>
+        </table>
+      </r-cell>
+
+    </r-grid>
+    <r-grid columns=4>
+        <r-cell span=2-3>
+          <hr>
+          <h3><a href="https://njsharp.uk/" >@NJSharp</a></h3>
+        </r-cell>
+    </r-grid>
+  </body>
+</html>
