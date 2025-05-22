@@ -133,6 +133,12 @@ function populateDropdowns() {
         return;
     }
 
+    const previouslySelectedSize = sizeSelect.value;
+    const previouslySelectedPitch = pitchSelect.value;
+
+    // Clear existing size options
+    sizeSelect.innerHTML = '';
+
     // Populate size options
     for (const size in threadData) {
         if (threadData.hasOwnProperty(size)) {
@@ -140,6 +146,10 @@ function populateDropdowns() {
             option.value = size;
             option.text = size;
             sizeSelect.appendChild(option);
+
+            if (size === previouslySelectedSize) {
+                option.selected = true;
+            }
         }
     }
 
@@ -155,6 +165,10 @@ function populateDropdowns() {
                 option.value = pitch;
                 option.text = pitch;
                 pitchSelect.appendChild(option);
+
+                 if (pitch === previouslySelectedPitch) {
+                    option.selected = true;
+                }
             }
         }
     }
