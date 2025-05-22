@@ -8,8 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="/Raster-v20/raster2.css">
     <script src="/scripts.js"></script>
+    <script src="/threadmate.js"></script>
     <style>
-      body {
+      html {
         background-color: rgb(231, 231, 0);
       }
 
@@ -18,30 +19,25 @@
       }
     </style>
   </head>
-  <body onload="Development_Warning()">
+  <body onload="Development_Warning(); calculateThread();">
     <!-- Title -->
     <r-grid columns=4>
       <r-cell span=2-3><h1>ThreadMate</h1></r-cell>
       <r-cell span=2-2><h3>ThreadMate is a tool for calculating mechanical thread connections</h3></r-cell>
     </r-grid>
 
-    <r-grid columns=4>
+    <r-grid columns=4 id="thread-input">
       <r-cell span=2-3>
         <h3>External Threads</h3>
             <label for="size">Enter the Size of the thread</label>
-            <select name="size" id="cars">
-              <option value="M10">M10</option>
-              <option value="M11">M11</option>
-              <option value="M12">M12</option>
+            <select name="size" id="thread-size" onchange="populateDropdowns(); calculateThread()">
             </select>
       </r-cell>
       <r-cell span=2-3>
             <label for="pitch">Enter the Pitch of the thread</label>
-            <select name="pitch" id="cars">
-              <option value="1.5">1.5</option>
-              <option value="M11">M11</option>
-              <option value="M12">M12</option>
+            <select name="pitch" id="thread-pitch" onchange="calculateThread()">
             </select>
+            <div id="thread-result" style="margin-top:1em;"></div>
         <hr>
       </r-cell>
 
