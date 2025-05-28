@@ -147,7 +147,12 @@ function populateDropdowns() {
             option.text = size;
             sizeSelect.appendChild(option);
 
-            if (size === previouslySelectedSize) {
+            if (previouslySelectedSize) {
+                if (size === previouslySelectedSize) {
+                    option.selected = true;
+                }
+            }
+            else if (size === 'M10') {
                 option.selected = true;
             }
         }
@@ -181,6 +186,10 @@ function calculateThread() {
     const pitch = pitchSelect.value;
     const resultDiv = document.getElementById('thread-result');
 
+    // Get SVG elements
+    const tappingSizeText = document.getElementById('tapping-size');
+    const clearanceSizeText = document.getElementById('clearance-size');
+
     console.log(`Calculating thread for size: ${size}, pitch: ${pitch}`);
 
     // Check if both size and pitch have valid values
@@ -189,6 +198,11 @@ function calculateThread() {
             const tapping = threadData[size][pitch].tapping;
             const clearance = threadData[size][pitch].clearance;
             resultDiv.innerHTML = `<b>Tapping Size:</b> ${tapping}<br><b>Clearance Size:</b> ${clearance}`;
+
+            // Update SVG elements
+            tappingSizeText.textContent = `${tapping}`;
+            clearanceSizeText.textContent = `${clearance}`;
+
         } else {
             resultDiv.innerHTML = '<span style="color:red">No data for this size/pitch combination.</span>';
         }
