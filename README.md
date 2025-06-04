@@ -6,10 +6,10 @@ This is also my GitHub about page that I will need to try and keep updated
 
 ## Web Button
 
-How to add my 80:30 web button to your site
+How to add my 88 × 31 web button to your site
 
-<a href="https://njsharp.uk/" target="blank_"><img height="30" width="80" src="/button.png"></a>
+<a href="https://njsharp.uk/button" target="blank_"><img src="https://www.njsharp.uk/button.gif"></a>
 
 ```HTML
-    <a href="https://njsharp.uk/" target="blank_"><img height="30" width="80" src="/button.png"></a>
+    <a href="https://njsharp.uk/button" target="blank_"><img src="https://www.njsharp.uk/button.gif"></a>
 ```

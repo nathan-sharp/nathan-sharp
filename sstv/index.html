@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SSTV</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/Raster-v20/raster2.css">
+    <script src="/sstv/sstv.js"></script>
+  </head>
+  <body>
+    <r-grid columns=4>
+      <r-cell span=2-3>
+        <h1>Slow Scan<br>Television</h1>
+        <hr>
+      </r-cell>
+      <r-cell span=2-3>
+        <h2>About</h2>
+        <p>SSTV (Slow Scan Television) is a method of transmitting static images over radio frequencies. This page provides tools for encoding and decoding SSTV images.</p>
+      </r-cell>
+
+      <r-cell span=2-3>
+        <h2>Encoder</h2>
+        <!-- encoder section -->
+        <p>Use the encoder to convert images into SSTV format. Upload an image file below:</p>
+        <form id="encoder-form">
+          <input type="file" id="image-input" accept="image/*">
+          <select id="encoding-mode">
+            <option value="martin1">Martin 1</option>
+            <option value="martin2">Martin 2</option>
+            <option value="scottie1">Scottie 1</option>
+            <!-- Add more modes as needed -->
+          </select>
+          <button type="button" onclick="encodeImage()">Encode Image</button>
+        </form>
+        <span id="encoding-progress"></span>
+        <br>
+        <audio id="audio-output" controls></audio>
+      </r-cell>
+
+      <r-cell span=2-3>
+        <h2>Decoder</h2>
+        <!-- decoder section -->
+      </r-cell>
+    </r-grid>
+
+    <r-grid columns=4>
+      <r-cell span=2-3>
+        <hr>
+        <!-- Credits -->
+        <a href="https://njsharp.uk/button" target="blank_"><img src="https://www.njsharp.uk/button.gif"></a>
+        <!-- add more buttons as needed -->
+      </r-grid>
+  </body>
+</html>
