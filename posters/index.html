@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="stylesheet" href="/Raster-v20/raster2.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+39&display=swap" rel="stylesheet">
   <style>
 
 :root {
@@ -90,6 +93,13 @@ html.white-bg .poster {
   box-shadow: 0px 0.5rem 1.2rem rgba(0,0,0, 0.1);
 }
 
+    .barcode {
+      font-size: 5rem;
+      font-family: "Libre Barcode 39", system-ui;
+      font-weight: 400;
+      font-style: normal;
+    }
+
   </style>
 </head>
 <body>
@@ -134,10 +144,10 @@ The International Typographic Style, also known as the Swiss Style, is a graphic
       </r-cell>
 
       <r-cell span=1-2 class=xsmall style="height:2rem">
-        Akzidenz Grotesk<br>
-        Univers<br>
-        Neue Haas Grotesk<br>
-        Helvetica
+        <br>
+        <br>
+        <p class="barcode">001</p>
+        NJS-001
       </r-cell>
       <r-cell span=2 class=xsmall style="height:2rem">
         Basel School of Design<br>
