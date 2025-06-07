@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Design</title>
+    <title>Design • N J Sharp</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +15,52 @@
         background-color: black;
         color: white;
       }
+
+      .color-palette {
+        margin-bottom: 20px;
+      }
+
+      .palette-title {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+      }
+
+      .color-swatches {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+      }
+
+      .color-swatch {
+        width: 100px;
+        height: 100px;
+        margin-right: 10px;
+        border: 1px solid #ccc;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 5px;
+        box-sizing: border-box;
+      }
+
+      .color-code {
+        font-size: 0.8em;
+        margin-top: 5px;
+        color: #fff; /* White color for the hex code */
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.8); /* Add a text shadow for better readability */
+      }
     </style>
+    <script>
+      function copyToClipboard(colorCode) {
+        navigator.clipboard.writeText(colorCode).then(function() {
+          console.log('Color code copied to clipboard: ' + colorCode);
+        }, function(err) {
+          console.error('Could not copy color code: ', err);
+        });
+      }
+    </script>
   </head>
   <body>
     <r-grid columns=4>
@@ -26,22 +71,114 @@
 
       <r-cell span=2-3>
         <h2>Overview</h2>
-        <p>A brief overview of the project.</p>
+        <p>This document outlines the graphic design standards for the N J Sharp website. It covers colors, fonts, and layout guidelines to ensure a consistent and visually appealing user experience.</p>
+        <hr>
       </r-cell>
 
       <r-cell span=2-3>
-        <h2>Objectives</h2>
+        <h2>Colors</h2>
+
+        <div class="color-palette">
+          <div class="palette-title">Full palette</div>
+          <div class="color-swatches">
+            <div class="color-swatch" style="background-color: #232436;" onclick="copyToClipboard('#232436')">
+              <span class="color-code">#232436</span>
+            </div>
+            <div class="color-swatch" style="background-color: #48495d;" onclick="copyToClipboard('#48495d')">
+              <span class="color-code">#48495d</span>
+            </div>
+            <div class="color-swatch" style="background-color: #BDBAC3;" onclick="copyToClipboard('#BDBAC3')">
+              <span class="color-code">#BDBAC3</span>
+            </div>
+            <div class="color-swatch" style="background-color: #E8CDAF;" onclick="copyToClipboard('#E8CDAF')">
+              <span class="color-code">#E8CDAF</span>
+            </div>
+            <div class="color-swatch" style="background-color: #C38D69;" onclick="copyToClipboard('#C38D69')">
+              <span class="color-code">#C38D69</span>
+            </div>
+            <div class="color-swatch" style="background-color: #794635;" onclick="copyToClipboard('#794635')">
+              <span class="color-code">#794635</span>
+            </div>
+            <div class="color-swatch" style="background-color: #A6C4DC;" onclick="copyToClipboard('#A6C4DC')">
+              <span class="color-code">#A6C4DC</span>
+            </div>
+            <div class="color-swatch" style="background-color: #A56F68;" onclick="copyToClipboard('#A56F68')">
+              <span class="color-code">#A56F68</span>
+            </div>
+          </div>
+        </div>
+
+        <p>The following colors should be used throughout the website:</p>
+
+        <div class="color-palette">
+          <div class="palette-title"><a href="/">Home Page</a></div>
+          <div class="color-swatches">
+            <div class="color-swatch" style="background-color: #232436;" onclick="copyToClipboard('#232436')">
+              <span class="color-code">#232436</span>
+            </div>
+            <div class="color-swatch" style="background-color: #BDBAC3;" onclick="copyToClipboard('#BDBAC3')">
+              <span class="color-code">#BDBAC3</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="color-palette">
+          <div class="palette-title"><a href="/about/">About Page</a></div>
+          <div class="color-swatches">
+            <div class="color-swatch" style="background-color: #E8CDAF;" onclick="copyToClipboard('#E8CDAF')">
+              <span class="color-code">#E8CDAF</span>
+            </div>
+            <div class="color-swatch" style="background-color: #48495d;" onclick="copyToClipboard('#48495d')">
+              <span class="color-code">#48495d</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="color-palette">
+          <div class="palette-title"><a href="/projects/">Projects Page</a></div>
+          <div class="color-swatches">
+            <div class="color-swatch" style="background-color: #A6C4DC;" onclick="copyToClipboard('#A6C4DC')">
+              <span class="color-code">#A6C4DC</span>
+            </div>
+            <div class="color-swatch" style="background-color: #232436;" onclick="copyToClipboard('#232436')">
+              <span class="color-code">#232436</span>
+            </div>
+          </div>
+        </div>
+        <hr>
+      </r-cell>
+
+      <r-cell span=2-3>
+        <h2>Fonts</h2>
+        <p>The following fonts should be used throughout the website:</p>
         <ul>
-          <li>Objective 1</li>
-          <li>Objective 2</li>
-          <li>Objective 3</li>
+          <li><strong>Heading Font:</strong> Arial, sans-serif</li>
+          <li><strong>Body Font:</strong> Arial, sans-serif</li>
         </ul>
         <hr>
       </r-cell>
 
       <r-cell span=2-3>
-        <h2>Project Details</h2>
-        <p>Details about the project.</p>
+        <h2>Layout</h2>
+        <p>The website uses a grid-based layout with the Raster framework. Here are some guidelines:</p>
+        <ul>
+          <li>Use <code>&lt;r-grid&gt;</code> to create a grid container.</li>
+          <li>Use <code>&lt;r-cell&gt;</code> to create grid cells.</li>
+          <li>Specify the number of columns for the grid using the <code>columns</code> attribute.</li>
+          <li>Use the <code>span</code> attribute to specify the number of columns a cell should span.</li>
+        </ul>
+        <hr>
+      </r-cell>
+
+      <r-cell span=2-3>
+        <h2>Creating New Pages</h2>
+        <p>To create a new page, follow these steps:</p>
+        <ol>
+          <li>Create a new HTML file in the appropriate directory.</li>
+          <li>Include the necessary meta tags and CSS links in the <code>&lt;head&gt;</code> section.</li>
+          <li>Use the grid system to structure the content of the page.</li>
+          <li>Follow the color and font guidelines outlined in this document.</li>
+        </ol>
       </r-cell>
     </r-grid>
     <r-grid columns=4>
@@ -50,6 +187,6 @@
         <!-- Credits -->
         <a href="https://njsharp.uk/button" target="blank_"><img src="https://www.njsharp.uk/button.gif"></a>
         <!-- add more buttons as needed -->
-      </r-grid>
+      </r-cell>
   </body>
 </html>
