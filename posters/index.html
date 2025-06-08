@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Raster grid examples</title>
+  <title>Posters • N J Sharp</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+39&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <script src="/scripts.js"></script>
   <style>
@@ -81,11 +82,19 @@ footer { margin: var(--margin) }
 }
 
 .poster2 {
-  background: #555;
-  background-image:
-    linear-gradient(20deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.03)),
-    linear-gradient(175deg, #555, #555960);
-    color: rgba(252,252,252,0.98);
+  background: black;
+  color: white;
+  font-family: "Orbitron", system-ui, sans-serif;
+  font-weight: 400;
+}
+
+#one {
+  width: 100%;
+  background-color: #555;
+}
+#two {
+  width: 100%;
+  background-color: #333;
 }
 
 html.white-bg {
@@ -110,7 +119,7 @@ html.white-bg .poster {
   <div class="flex-h">
 
 
-    <r-grid columns=8 class="poster poster1 padding1">
+    <r-grid columns=8 class="poster poster1 padding1" onclick="generatePdf(this)">
       <r-cell span=row><br></r-cell>
       <r-cell span=row>
         <h1 class=xxxlarge style="font-weight:800">
@@ -172,40 +181,62 @@ The International Typographic Style, also known as the Swiss Style, is a graphic
     </r-grid>
 
 
-    <r-grid columns=4 class="poster poster2 padding1">
-      <r-cell span=3-3>
-        Raster<br>
-        Grid system
-      </r-cell>
-      <r-cell span=4-4>
-        Poster 001<br>
-        February 2019
-      </r-cell>
+    <r-grid columns=1 class="poster poster2 padding1" onclick="generatePdf(this)">
       <r-cell span=row>
-        <h1 class=large>
-          <hr>
-          Raster<br>
-          <hr>
-          Grid System<br>
+        <h1 class=xxxlarge style="color:white; text-align: center; padding: 2rem 0;">
+          N J Sharp
         </h1>
       </r-cell>
-      <r-cell span=3-3>
-        Minimal and straight-forward CSS grid system utilizing
-        descriptive HTML rather than semantic CSS.
+      <r-cell span=row>
+        <div class="stripe">
+          <p id="one">uwu</p>
+          <p id="two">uwu</p>
+          <p id="three">uwu</p>
+          <p id="four">uwu</p>
+        </div>
       </r-cell>
-      <r-cell span=4-4>
-        Grids lend themselves really well to device-size responsive design. The span-s attribute defines alternate layout when your design is presented on a small screen. This makes designing for large and small screens really easy.
-      </r-cell>
-      <r-cell span=3+1 class="bottom">
-        4 column grid
-      </r-cell>
-      <r-cell class="bottom">
-        HTML
+      <r-cell span=1-2 class=xsmall style="height:2rem">
+        <br>
+        <br>
+        <p class="barcode">001</p>
+        NJS-001
       </r-cell>
     </r-grid>
 
 
 
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3FkeAHmDOerZi0I7Nw3vjQvW6yMVcwiGgCpsUf3OnPUkWNz/OuqtQmcwQHdPA0tPiEwgIH/o4PxhUv6Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    window.onload = function() {
+      function generatePdf(element) {
+        console.log("generatePdf called", element);
+        // Clone the element
+        const elementClone = element.cloneNode(true);
+        var opt = {
+          margin:       0.5,
+          filename:     'poster.pdf',
+          jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+        };
+        html2pdf().set(opt).from(elementClone).save().catch(err => console.error("PDF generation error:", err));
+      }
+
+      // Minimal example
+      document.getElementById('minimalButton').addEventListener('click', function() {
+        var minimalContent = document.createElement('div');
+        minimalContent.textContent = 'Hello, PDF!';
+        document.body.appendChild(minimalContent);
+        var opt = {
+          margin:       0.5,
+          filename:     'minimal.pdf',
+          jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+        };
+        html2pdf().set(opt).from(minimalContent).save().then(() => document.body.removeChild(minimalContent)).catch(err => console.error("Minimal PDF error:", err));
+      });
+
+      window.generatePdf = generatePdf; // Make it accessible globally
+    }
+  </script>
+  <button id="minimalButton">Generate Minimal PDF</button>
 </body>
 </html>
