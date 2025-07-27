@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Art Gallery • N J Sharp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <style>
+      body { margin: 0; }
+      #info {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: rgba(0,0,0,0.5);
+        color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+        z-index: 10;
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="info">Use mouse or touch to look around. Walk with WASD or arrow keys.</div>
+    <a-scene>
+      <!-- Main Room -->
+      <a-plane position="0 0 0" rotation="-90 0 0" width="20" height="20" color="#ccc"></a-plane>
+      <!-- North Wall with Doorway -->
+      <a-box position="-5 2 -10" depth="0.5" height="4" width="8" color="#fff"></a-box>
+      <a-box position="5 2 -10" depth="0.5" height="4" width="8" color="#fff"></a-box>
+      <!-- South Wall with Doorway -->
+      <a-box position="-5 2 10" depth="0.5" height="4" width="8" color="#fff"></a-box>
+      <a-box position="5 2 10" depth="0.5" height="4" width="8" color="#fff"></a-box>
+      <!-- West Wall with Doorway -->
+      <a-box position="-10 2 -5" depth="10" height="4" width="0.5" color="#fff"></a-box>
+      <a-box position="-10 2 5" depth="10" height="4" width="0.5" color="#fff"></a-box>
+      <!-- East Wall with Doorway -->
+      <a-box position="10 2 -5" depth="10" height="4" width="0.5" color="#fff"></a-box>
+      <a-box position="10 2 5" depth="10" height="4" width="0.5" color="#fff"></a-box>
+      <!-- Art Frames Main Room -->
+      <a-box position="-7 2 -9.7" width="3" height="2" depth="0.2" color="#222"></a-box>
+      <a-image src="../media/hero.jpeg" position="-7 2 -9.6" width="2.7" height="1.7"></a-image>
+      <a-box position="0 2 -9.7" width="3" height="2" depth="0.2" color="#222"></a-box>
+      <a-image src="../media/crathie.JPG" position="0 2 -9.6" width="2.7" height="1.7"></a-image>
+      <a-box position="7 2 -9.7" width="3" height="2" depth="0.2" color="#222"></a-box>
+      <a-image src="../media/loch-an-eilein.JPG" position="7 2 -9.6" width="2.7" height="1.7"></a-image>
+      <a-box position="-9.7 2 -5" width="0.2" height="2" depth="3" color="#222"></a-box>
+      <a-image src="../media/clachnaben-cliff.jpg" position="-9.6 2 -5" width="1.7" height="2.7" rotation="0 90 0"></a-image>
+      <a-box position="-9.7 2 5" width="0.2" height="2" depth="3" color="#222"></a-box>
+      <a-image src="../media/dunnoter-rocks.JPG" position="-9.6 2 5" width="1.7" height="2.7" rotation="0 90 0"></a-image>
+      <a-box position="9.7 2 -5" width="0.2" height="2" depth="3" color="#222"></a-box>
+      <a-image src="../media/finzean-snow.jpg" position="9.6 2 -5" width="1.7" height="2.7" rotation="0 -90 0"></a-image>
+      <a-box position="9.7 2 5" width="0.2" height="2" depth="3" color="#222"></a-box>
+      <a-image src="../media/crathis-garden.jpg" position="9.6 2 5" width="1.7" height="2.7" rotation="0 -90 0"></a-image>
+      <!-- Room 2 (North) -->
+      <a-plane position="0 0 -30" rotation="-90 0 0" width="20" height="20" color="#e3e3e3"></a-plane>
+      <a-box position="0 2 -40" depth="0.5" height="4" width="20" color="#fff"></a-box>
+      <a-box position="0 2 -20" depth="0.5" height="4" width="20" color="#fff"></a-box>
+      <a-box position="-10 2 -30" depth="20" height="4" width="0.5" color="#fff"></a-box>
+      <a-box position="10 2 -30" depth="20" height="4" width="0.5" color="#fff"></a-box>
+      <a-box position="-7 2 -39.7" width="3" height="2" depth="0.2" color="#222"></a-box>
+      <a-image src="../media/pfp.jpeg" position="-7 2 -39.6" width="2.7" height="1.7"></a-image>
+      <a-box position="0 2 -39.7" width="3" height="2" depth="0.2" color="#222"></a-box>
+      <a-image src="../media/toms-cairn.jpg" position="0 2 -39.6" width="2.7" height="1.7"></a-image>
+      <a-box position="7 2 -39.7" width="3" height="2" depth="0.2" color="#222"></a-box>
+      <a-image src="../media/hero.jpeg" position="7 2 -39.6" width="2.7" height="1.7"></a-image>
+      <!-- Room 3 (East) -->
+      <a-plane position="30 0 0" rotation="-90 0 0" width="20" height="20" color="#e3e3e3"></a-plane>
+      <a-box position="30 2 -10" depth="20" height="4" width="0.5" color="#fff"></a-box>
+      <a-box position="30 2 10" depth="20" height="4" width="0.5" color="#fff"></a-box>
+      <a-box position="20 2 0" depth="0.5" height="4" width="20" color="#fff"></a-box>
+      <a-box position="40 2 0" depth="0.5" height="4" width="20" color="#fff"></a-box>
+      <a-box position="30 2 -7" width="3" height="2" depth="0.2" color="#222"></a-box>
+      <a-image src="../media/crathie.JPG" position="30 2 -6.9" width="2.7" height="1.7"></a-image>
+      <a-box position="30 2 0" width="3" height="2" depth="0.2" color="#222"></a-box>
+      <a-image src="../media/loch-an-eilein.JPG" position="30 2 0.1" width="2.7" height="1.7"></a-image>
+      <a-box position="30 2 7" width="3" height="2" depth="0.2" color="#222"></a-box>
+      <a-image src="../media/clachnaben-cliff.jpg" position="30 2 7.1" width="2.7" height="1.7"></a-image>
+      <!-- Room 4 (South) -->
+      <a-plane position="0 0 30" rotation="-90 0 0" width="20" height="20" color="#e3e3e3"></a-plane>
+      <a-box position="0 2 20" depth="0.5" height="4" width="20" color="#fff"></a-box>
+      <a-box position="0 2 40" depth="0.5" height="4" width="20" color="#fff"></a-box>
+      <a-box position="-10 2 30" depth="20" height="4" width="0.5" color="#fff"></a-box>
+      <a-box position="10 2 30" depth="20" height="4" width="0.5" color="#fff"></a-box>
+      <a-box position="-7 2 39.7" width="3" height="2" depth="0.2" color="#222"></a-box>
+      <a-image src="../media/dunnoter-rocks.JPG" position="-7 2 39.8" width="2.7" height="1.7"></a-image>
+      <a-box position="0 2 39.7" width="3" height="2" depth="0.2" color="#222"></a-box>
+      <a-image src="../media/finzean-snow.jpg" position="0 2 39.8" width="2.7" height="1.7"></a-image>
+      <a-box position="7 2 39.7" width="3" height="2" depth="0.2" color="#222"></a-box>
+      <a-image src="../media/crathis-garden.jpg" position="7 2 39.8" width="2.7" height="1.7"></a-image>
+      <!-- Room 5 (West) -->
+      <a-plane position="-30 0 0" rotation="-90 0 0" width="20" height="20" color="#e3e3e3"></a-plane>
+      <a-box position="-30 2 -10" depth="20" height="4" width="0.5" color="#fff"></a-box>
+      <a-box position="-30 2 10" depth="20" height="4" width="0.5" color="#fff"></a-box>
+      <a-box position="-40 2 0" depth="0.5" height="4" width="20" color="#fff"></a-box>
+      <a-box position="-20 2 0" depth="0.5" height="4" width="20" color="#fff"></a-box>
+      <a-box position="-30 2 -7" width="3" height="2" depth="0.2" color="#222"></a-box>
+      <a-image src="../media/toms-cairn.jpg" position="-30 2 -6.9" width="2.7" height="1.7"></a-image>
+      <a-box position="-30 2 0" width="3" height="2" depth="0.2" color="#222"></a-box>
+      <a-image src="../media/hero.jpeg" position="-30 2 0.1" width="2.7" height="1.7"></a-image>
+      <a-box position="-30 2 7" width="3" height="2" depth="0.2" color="#222"></a-box>
+      <a-image src="../media/crathie.JPG" position="-30 2 7.1" width="2.7" height="1.7"></a-image>
+      <!-- Lighting -->
+      <a-entity light="type: ambient; intensity: 0.7"></a-entity>
+      <a-entity light="type: directional; intensity: 0.8" position="0 10 0"></a-entity>
+      <!-- Camera -->
+      <a-entity camera wasd-controls look-controls position="0 1.6 8"></a-entity>
+    </a-scene>
+  </body>
+</html>

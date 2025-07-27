@@ -1,0 +1,242 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Posters • N J Sharp</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="/Raster-v20/raster2.css">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+39&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script src="/scripts.js"></script>
+  <style>
+
+:root {
+  --fontSize: calc(100vh / 95);
+  --margin: 6rem;
+}
+@media only screen and (max-width: 1000px) { :root {
+  --fontSize: calc(100vmin / 70);
+}}
+
+html {
+  background: #111;
+  background-image: linear-gradient(4deg, #111111, #141414);
+  background-size: 100%;
+  background-attachment: fixed;
+  color: rgba(252,252,252,0.99);
+}
+@media print {
+  html { background: white }
+}
+body { padding: 0 0 3rem 0 }
+
+footer { margin: var(--margin) }
+
+.flex-h { flex-wrap: wrap; justify-content: center }
+.black { color: black; }
+
+.noise {
+  background-image: url(noise512.png);
+  background-size: 256px;
+  opacity: 0.02;
+  pointer-events: none;
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+}
+@media print {
+  .noise { display:none; }
+}
+
+.poster {
+  width: 60rem;
+  height: 84rem;
+  background: #555;
+  margin: var(--margin) calc(var(--margin) / 2);
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  box-shadow: 0px 2px 8px black;
+}
+@media print {
+  .poster {
+    box-shadow: none;
+    page-break-before: always;
+    page-break-after: always;
+    page-break-inside: avoid;
+    break-before: always;
+    break-after: always;
+    break-inside: avoid-page;
+  }
+}
+
+.poster1 {
+  background: #232436;
+  color: #BDBAC3;
+}
+
+.poster2 {
+  background: black;
+  color: white;
+  font-family: "Orbitron", system-ui, sans-serif;
+  font-weight: 400;
+}
+
+#one {
+  width: 100%;
+  background-color: #555;
+}
+#two {
+  width: 100%;
+  background-color: #333;
+}
+
+html.white-bg {
+  background: white;
+  color:rgba(0,0,0,0.99);
+}
+html.white-bg .poster {
+  box-shadow: 0px 0.5rem 1.2rem rgba(0,0,0, 0.1);
+}
+
+    .barcode {
+      font-size: 5rem;
+      font-family: "Libre Barcode 39", system-ui;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+  </style>
+</head>
+<body>
+  <div class=noise></div>
+  <div class="flex-h">
+
+
+    <r-grid columns=8 class="poster poster1 padding1" onclick="generatePdf(this)">
+      <r-cell span=row><br></r-cell>
+      <r-cell span=row>
+        <h1 class=xxxlarge style="font-weight:800">
+          N J Sharp
+        </h1>
+      </r-cell>
+
+      <r-cell span=3+2 class="h5 right" style="padding-right:4rem">
+        Aka Nathan
+      </r-cell>
+
+      <r-cell span=5-7>
+        <p>
+The International Typographic Style, also known as the Swiss Style, is a graphic design style that emerged in Russia, the Netherlands, and Germany in the 1920s and was developed by designers in Switzerland during the 1950s.
+        </p>
+        <p>
+          The International Typographic Style has had profound influence on graphic design as a part of the modernist movement, impacting many design-related fields including architecture and art. It emphasizes cleanness, readability, and objectivity.
+        </p>
+      </r-cell>
+
+      <r-cell span=5.. style="font-size:4rem;font-weight:200;margin-left:-0.2em">
+        &darr;
+      </r-cell>
+
+      <r-cell span=1-4>
+        <h1 class=xxxlarge style="font-weight:800;line-height:0.9">
+          <br>
+          2006
+          <!-- <span style="font-weight:300;letter-spacing:0.3rem">1959</span> -->
+        </h1>
+      </r-cell>
+      <r-cell span=2 class=h3 style="line-height:1.5;padding-top:0.7rem;font-weight:500">
+        the solution to the design problem should emerge from its content
+      </r-cell>
+
+      <r-cell span=1-2 class=xsmall style="height:2rem">
+        <br>
+        <br>
+        <p class="barcode">001</p>
+        NJS-001
+      </r-cell>
+      <r-cell span=2 class=xsmall style="height:2rem">
+        Basel School of Design<br>
+        Kunstgewerbeschule Zürich<br>
+        McGraw-Hill<br>
+        MIT
+      </r-cell>
+      <r-cell span=2 class=xsmall style="height:2rem">
+        Ernst Keller<br>
+        Josef Müller-Brockmann<br>
+        Rudolph de Harak<br>
+        Jacqueline Casey
+      </r-cell>
+      <r-cell span=2 class=xsmall style="height:2rem">
+        Universal form of graphic expression through objective<br>
+        and impersonal presentation.
+      </r-cell>
+
+    </r-grid>
+
+
+    <r-grid columns=1 class="poster poster2 padding1" onclick="generatePdf(this)">
+      <r-cell span=row>
+        <h1 class=xxxlarge style="color:white; text-align: center; padding: 2rem 0;">
+          N J Sharp
+        </h1>
+      </r-cell>
+      <r-cell span=row>
+        <div class="stripe">
+          <p id="one">uwu</p>
+          <p id="two">uwu</p>
+          <p id="three">uwu</p>
+          <p id="four">uwu</p>
+        </div>
+      </r-cell>
+      <r-cell span=1-2 class=xsmall style="height:2rem">
+        <br>
+        <br>
+        <p class="barcode">001</p>
+        NJS-001
+      </r-cell>
+    </r-grid>
+
+
+
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3FkeAHmDOerZi0I7Nw3vjQvW6yMVcwiGgCpsUf3OnPUkWNz/OuqtQmcwQHdPA0tPiEwgIH/o4PxhUv6Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    window.onload = function() {
+      function generatePdf(element) {
+        console.log("generatePdf called", element);
+        // Clone the element
+        const elementClone = element.cloneNode(true);
+        var opt = {
+          margin:       0.5,
+          filename:     'poster.pdf',
+          jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+        };
+        html2pdf().set(opt).from(elementClone).save().catch(err => console.error("PDF generation error:", err));
+      }
+
+      // Minimal example
+      document.getElementById('minimalButton').addEventListener('click', function() {
+        var minimalContent = document.createElement('div');
+        minimalContent.textContent = 'Hello, PDF!';
+        document.body.appendChild(minimalContent);
+        var opt = {
+          margin:       0.5,
+          filename:     'minimal.pdf',
+          jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+        };
+        html2pdf().set(opt).from(minimalContent).save().then(() => document.body.removeChild(minimalContent)).catch(err => console.error("Minimal PDF error:", err));
+      });
+
+      window.generatePdf = generatePdf; // Make it accessible globally
+    }
+  </script>
+  <button id="minimalButton">Generate Minimal PDF</button>
+</body>
+</html>

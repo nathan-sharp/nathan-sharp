@@ -48,6 +48,34 @@ THE SOFTWARE.
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-57x57-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/styles.css">
+    <!-- Material 3 CSS for inputs -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <style>
+      .m3-input {
+        font-family: 'Roboto', Arial, sans-serif;
+        font-size: 1.1em;
+        padding: 12px 16px 12px 16px;
+        border: 1px solid #c7c7c7;
+        border-radius: 8px;
+        background: #fff;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+        outline: none;
+        transition: border-color 0.2s;
+        margin: 0 8px;
+      }
+      .m3-input:focus {
+        border-color: #4285f4;
+      }
+      .m3-label {
+        font-family: 'Roboto', Arial, sans-serif;
+        font-size: 1.1em;
+        color: #333;
+        margin-right: 8px;
+      }
+    </style>
     <style type="text/css">
 
 @import url('https://rsms.me/inter/inter.css');
@@ -108,10 +136,6 @@ svg text.arc.hidden {
 svg text.arc.zero {
   opacity:0.3;
 }
-svg text.arc textPath {
-  method: stretch;
-  spacing: exact;
-}
 
 /* default color scheme */
 body { background:white; }
@@ -131,11 +155,19 @@ body.no-labels svg text.arc { display:none; }
 body.no-pulse svg circle.hundreds { display:none; }
 
     </style>
+    <script src="/scripts.js"></script>
   </head>
-  <body>
-    <!-- viewBox="0 0 1000 300"-->
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%">
-    </svg>
+  <body style="margin:0;padding:0;box-sizing:border-box;display:flex;flex-direction:column;min-height:100vh;">
+    <div id="input-section" style="width:100%;text-align:center;padding:24px 0 8px 0;background:#f4f4f4;z-index:2;box-shadow:0 2px 8px rgba(0,0,0,0.04);display:flex;justify-content:center;align-items:center;gap:32px;">
+      <label for="dob-date" class="m3-label">Date of birth:</label>
+      <input type="date" id="dob-date" class="m3-input" />
+      <label for="dob-time" class="m3-label">Time:</label>
+      <input type="time" id="dob-time" class="m3-input" step="1" />
+    </div>
+    <div id="svg-container" style="flex:1;position:relative;width:100%;height:100%;overflow:hidden;">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" style="position:absolute;left:0;top:0;width:100%;height:100%;">
+      </svg>
+    </div>
     <script>
 
 var themes = {
@@ -227,7 +259,7 @@ var themes = {
     hours:    "#444",
     days:     "#444",
     weeks:    "#444",
-    months:   "#444",
+    months:    "#444",
     years:    "#444",
   },
   "23": { // dark 4, monochrome, minimal
@@ -361,12 +393,45 @@ if (parseBool(qs.dark, false)) {
   meta_apple_mobile_web_app_status_bar_style.setAttribute('content', 'default');
 }
 
-var ref_date = parseDate(qs.refdate)
+var ref_date = parseDate(qs.refdate);
 if (ref_date === null) {
   if (qs.refdate) {
     alert('Invalid date ' + qs.refdate)
   }
-  ref_date = parseDate('2006-04-20T02:00:00.000Z');
+  ref_date = null;
+}
+
+// Listen for user input and update ref_date
+var dobDateInput = document.getElementById('dob-date');
+var dobTimeInput = document.getElementById('dob-time');
+
+function updateRefDateFromInputs() {
+  var dateVal = dobDateInput.value;
+  var timeVal = dobTimeInput.value;
+  if (dateVal) {
+    var dateStr = dateVal;
+    if (timeVal) {
+      dateStr += 'T' + timeVal;
+      // If time is entered without seconds, add ':00'
+      if (/^\d{2}:\d{2}$/.test(timeVal)) {
+        dateStr += ':00';
+      }
+    } else {
+      dateStr += 'T00:00:00';
+    }
+    var d = parseDate(dateStr);
+    if (d) {
+      ref_date = d;
+      update_time_deltas();
+    }
+  }
+}
+if (dobDateInput) dobDateInput.addEventListener('input', updateRefDateFromInputs);
+if (dobTimeInput) dobTimeInput.addEventListener('input', updateRefDateFromInputs);
+
+// If no ref_date from URL, set default to today for initial load
+if (!ref_date) {
+  ref_date = new Date();
 }
 
 if (!window.requestAnimationFrame) {
@@ -676,7 +741,11 @@ function time_diff(date1, date2) {
 
 var time_deltas = {};
 function update_time_deltas() {
-  time_deltas = time_diff(ref_date, new Date);
+  if (ref_date) {
+    time_deltas = time_diff(ref_date, new Date);
+  } else {
+    time_deltas = {};
+  }
 }
 update_time_deltas();
 

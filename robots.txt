@@ -1,0 +1,16 @@
+# robots.txt for njsharp.uk
+#
+# eerrmm... hi, what are you doing here?
+# Your not a robot. OR ARE YOU!!!
+#
+# Disallow all crawlers from accessing sensitive or unfinished sections
+User-agent: *
+Disallow: /media/
+Disallow: /Raster-v20/
+Disallow: /sstv/
+
+# Allow all other content to be crawled
+Allow: /
+
+# Sitemap
+# Sitemap: https://www.njsharp.uk/sitemap.xml
