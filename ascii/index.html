@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Image to ASCII • N J Sharp</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/Raster-v20/raster2.css">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <script src="/scripts.js"></script>
+    <script src="ascii.js"></script>
+    <style>
+      body, html {
+        background-color: #000000;
+        color: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <r-grid columns=4>
+      <r-cell span=2-3>
+        <h1>Image to ASCII</h1>
+        <hr>
+        <p>Convert images to ASCII art. Upload an image and click the button to generate ASCII.</p>
+        <br>
+        <input type="file" id="imgInput" accept="image/*">
+        <button id="copyBtn">Copy ASCII</button>
+        <br><br>
+        <button id="convertBtn">Convert to ASCII</button>
+        <br><br>
+        <canvas id="imgCanvas" style="display:none;"></canvas>
+        <pre id="asciiPre" style="width:100%;font-family:monospace;white-space:pre;overflow-x:auto;"></pre>
+      </r-cell>
+      <r-cell span=2-3>
+        <hr>
+        <!-- Credits -->
+        <a href="https://njsharp.uk/button" target="blank_"><img src="https://www.njsharp.uk/button.gif"></a>
+        <!-- add more buttons as needed -->
+      </r-cell>
+    </r-grid>
+  </body>
+</html>
