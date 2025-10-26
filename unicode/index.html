@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>UniCode Table • N J Sharp</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/Raster-v20/raster2.css">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <script src="/scripts.js"></script>
+    <style>
+      body, html {
+        background-color: #A6C4DC;
+        color: #232436;
+      }
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        grid-gap: 10px;
+      }
+      .grid-item {
+        border: 1px solid black;
+        padding: 10px;
+        text-align: center;
+        background-color: #E8CDAF;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        min-height: 80px;
+      }
+      .char-name {
+        font-size: 0.7em;
+        min-height: 2.5em; /* Reserve space for 2 lines of text */
+      }
+    </style>
+  </head>
+  <body>
+    <r-grid columns=4>
+      <r-cell span=2-3>
+        <h1>UniCode Table</h1>
+        <hr>
+      </r-cell>
+
+      <r-cell span=2-3>
+        <h2>Overview</h2>
+        <p>Below is a list of Unicode characters along with their code points. All data comes form <a href="https://www.unicode.org/">UniCode</a>.</p>
+      </r-cell>
+
+      <r-cell span=2-3>
+        <h2>Character Table</h2>
+        <div id="unicode-grid" class="grid-container">
+          <p>Loading characters...</p>
+          <!-- Characters will be inserted here by JavaScript -->
+        </div>
+      </r-cell>
+    </r-grid>
+    <r-grid columns=4>
+      <r-cell span=2-3>
+        <hr>
+        <!-- Credits -->
+        <a href="https://njsharp.uk/button" target="blank_"><img src="https://www.njsharp.uk/button.gif"></a>
+        <!-- add more buttons as needed -->
+      </r-grid>
+    <script>
+      document.addEventListener('DOMContentLoaded', async function() {
+        const grid = document.getElementById('unicode-grid');
+        grid.innerHTML = '<p>Loading character data from unicode.org...</p>';
+        
+        try {
+          // Fetch the official UnicodeData.txt file from the Unicode Consortium.
+          const response = await fetch('./UnicodeData.txt');
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          const textData = await response.text();
+          
+          const charNames = {};
+          const lines = textData.split('\n');
+
+          for (const line of lines) {
+            if (!line) continue;
+            const parts = line.split(';');
+            const codePointHex = parts[0];
+            let name = parts[1];
+            const codePointDec = parseInt(codePointHex, 16);
+
+            // For control characters, the name is in angle brackets.
+            if (name.startsWith('<') && parts[10]) {
+              name = parts[10];
+            }
+            charNames[codePointDec] = name;
+          }
+
+          grid.innerHTML = ''; // Clear loading message
+          
+          // character display limit
+          const limit = 1024;
+  
+          for (let i = 0; i < limit; i++) {
+            const item = document.createElement('div');
+            item.className = 'grid-item';
+  
+            const char = document.createElement('span');
+            char.innerHTML = `&#${i};`;
+            char.style.fontSize = '2em';
+  
+            const code = document.createElement('span');
+            code.textContent = `U+${i.toString(16).toUpperCase().padStart(4, '0')}`;
+  
+            const name = document.createElement('span');
+            name.className = 'char-name';
+            // Use the fetched name, or a placeholder if it's not in our data
+            name.textContent = charNames[i] || 'Unknown';
+  
+            item.appendChild(char);
+            item.appendChild(code);
+            item.appendChild(name);
+            grid.appendChild(item);
+          }
+        } catch (error) {
+          grid.innerHTML = `<p>Error loading character data: ${error.message}</p>`;
+        }
+      });
+    </script>
+  </body>
+</html>
