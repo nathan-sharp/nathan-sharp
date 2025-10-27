@@ -11,6 +11,12 @@
     <script src="/sstv/sstv.js"></script>
     <script src="/scripts.js"></script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <style>
+      body, html {
+        background-color: #BDBAC3;
+        color: #232436;
+      }
+    </style>
   </head>
   <body>
     <r-grid columns=4>
@@ -35,7 +41,7 @@
             <option value="scottie1">Scottie 1</option>
             <!-- Add more modes as needed -->
           </select>
-          <button type="button" onclick="encodeImage()">Encode Image</button>
+          <button type="button" id="encode-button">Encode Image</button>
         </form>
         <span id="encoding-progress"></span>
         <br>
@@ -54,6 +60,7 @@
         <!-- Credits -->
         <a href="https://njsharp.uk/button" target="blank_"><img src="https://www.njsharp.uk/button.gif"></a>
         <!-- add more buttons as needed -->
-      </r-grid>
+      </r-cell>
+    </r-grid>
   </body>
 </html>
